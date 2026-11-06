@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F6F8FC;
+    color: #1e293b;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+/* Custom glow and futuristic cyber effects */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes radarSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes turntableOscillate {
+  0% {
+    transform: perspective(1200px) rotateY(-28deg) rotateX(1.5deg);
+  }
+  50% {
+    transform: perspective(1200px) rotateY(28deg) rotateX(-1.5deg);
+  }
+  100% {
+    transform: perspective(1200px) rotateY(-28deg) rotateX(1.5deg);
+  }
+}
+
+@keyframes turntableSpin360 {
+  0% {
+    transform: perspective(1200px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1200px) rotateY(360deg);
+  }
+}
+
+@keyframes holographicSheen {
+  0%, 100% {
+    filter: drop-shadow(0 15px 30px rgba(99, 102, 241, 0.35)) brightness(1);
+  }
+  25% {
+    filter: drop-shadow(8px 15px 30px rgba(34, 211, 238, 0.45)) brightness(1.08);
+  }
+  50% {
+    filter: drop-shadow(0 15px 25px rgba(99, 102, 241, 0.3)) brightness(0.96);
+  }
+  75% {
+    filter: drop-shadow(-8px 15px 30px rgba(168, 85, 247, 0.45)) brightness(1.08);
+  }
+}
+
+@keyframes holographicOrbit {
+  0% {
+    transform: rotateX(72deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(72deg) rotateZ(360deg);
+  }
+}
+
+@keyframes holographicOrbitReverse {
+  0% {
+    transform: rotateX(68deg) rotateZ(360deg);
+  }
+  100% {
+    transform: rotateX(68deg) rotateZ(0deg);
+  }
+}
+
+@keyframes floatSoft {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes ecgPulseFlow {
+  0% {
+    stroke-dashoffset: 240;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes pedestalPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes laserScan {
+  0% {
+    top: 5%;
+    opacity: 0.2;
+  }
+  50% {
+    top: 85%;
+    opacity: 0.95;
+  }
+  100% {
+    top: 5%;
+    opacity: 0.2;
+  }
+}
+
+.holo-rotate-oscillate {
+  animation: turntableOscillate 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.holo-rotate-360 {
+  animation: turntableSpin360 8.5s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.holo-body-sheen {
+  animation: holographicSheen 8.5s linear infinite;
+}
+
+.holo-orbit-ring {
+  animation: holographicOrbit 10s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.holo-orbit-ring-rev {
+  animation: holographicOrbitReverse 8s linear infinite;
+  transform-style: preserve-3d;
+}
+
+.empathy-float-1 {
+  animation: floatSoft 4.5s ease-in-out infinite;
+}
+
+.empathy-float-2 {
+  animation: floatSoft 5s ease-in-out infinite 1.5s;
+}
+
+.empathy-float-3 {
+  animation: floatSoft 4.8s ease-in-out infinite 0.8s;
+}
+
+.empathy-float-4 {
+  animation: floatSoft 5.2s ease-in-out infinite 2.2s;
+}
+
+.ecg-path-flow {
+  stroke-dasharray: 240;
+  animation: ecgPulseFlow 2.8s linear infinite;
+}
+
+.pedestal-pulse {
+  animation: pedestalPulse 3s ease-in-out infinite;
+}
+
+.laser-scan-line {
+  animation: laserScan 4s ease-in-out infinite;
+}
+
+.radar-sweep {
+  animation: radarSpin 8s linear infinite;
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Scrollbar polish */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
